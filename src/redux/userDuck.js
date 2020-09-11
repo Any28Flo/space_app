@@ -7,7 +7,7 @@ let LOGIN = "LOGIN"
 export default function reducer(state=initState, action ={}){
     switch (action.type) {
         //do reducer stuff
-        case LOGIN:
+
         default: return state;
     }
 }

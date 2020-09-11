@@ -8,10 +8,8 @@ let rootReducer = combineReducers({
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 export default function generateStore() {
-   /* const store = createStore(rootReducer,compose(
-        applyMiddleware(ReduxThunk.withExtraArgument(thunk)),
-        window.devToolsExtension ? window.devToolsExtension() : f => f
-    ));*/
   const store = createStore(rootReducer,
-      composeEnhancers(applyMiddleware(thunk)))
+      composeEnhancers(applyMiddleware(thunk))
+  )
+    return store
 }
