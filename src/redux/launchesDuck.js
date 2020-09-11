@@ -15,9 +15,11 @@ let GET_LAUCH_ERROR = "GET_LAUCH_ERROR"
 export default function reducer(state=initState, actions){
     switch (actions.type) {
         case GET_LAUCH:
+            return {...state,fetching : true}
         case  GET_LAUCH_SUCESS:
-            return {...state , launches: actions.payload}
+            return {...state , launches: actions.payload, fetching: false }
         case GET_LAUCH_ERROR:
+            return {...state , fetching: false, error: actions.payload}
         default: return state;
 
     }
@@ -25,6 +27,9 @@ export default function reducer(state=initState, actions){
 
 //Actions
 export let getCharactersAction = () =>(dispatch, getState) =>{
+    dispatch({
+        type: GET_LAUCH
+    })
     return axios.get(  `${URL}/launches`)
         .then(res =>{
             console.log(res)
@@ -32,5 +37,11 @@ export let getCharactersAction = () =>(dispatch, getState) =>{
                     type: GET_LAUCH_SUCESS,
                     payload : res.data
                 })
+        })
+        .catch(error =>{
+            dispatch({
+                type : GET_LAUCH_ERROR,
+                payload : error.response.message
+            })
         })
 }
