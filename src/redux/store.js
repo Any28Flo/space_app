@@ -2,6 +2,7 @@ import {createStore, combineReducers, compose, applyMiddleware} from "redux";
 import userReducer from "./userDuck"
 import launchesReducer , {getCharactersAction} from "./launchesDuck"
 import thunk from "redux-thunk";
+
 let rootReducer = combineReducers({
     user: userReducer,
     launches : launchesReducer

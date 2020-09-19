@@ -2,9 +2,9 @@ import axios from 'axios'
 
 //constant
 const initState ={
-    fetching:false,
-    launches : [],
-    current: {}
+    loading: false,
+    data: [],
+    error: null
 }
 const URL = 'https://api.spacexdata.com/v4'
 
@@ -32,7 +32,6 @@ export let getCharactersAction = () =>(dispatch, getState) =>{
     })
     return axios.get(  `${URL}/launches`)
         .then(res =>{
-            console.log(res)
                 dispatch({
                     type: GET_LAUCH_SUCESS,
                     payload : res.data

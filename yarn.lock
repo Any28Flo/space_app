@@ -9121,6 +9121,11 @@ react-scripts@3.4.3:
   optionalDependencies:
     fsevents "2.1.2"
 
+react-tailwindcss@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-tailwindcss/-/react-tailwindcss-1.0.0.tgz#f18e930de04fd701322c9eb1a3ac9003f76343e5"
+  integrity sha512-/oPmkTJOXZ0FulbeygWE9EpHhmSDujjqpCFqm6OwkSaBZryqrOL+uytugwD7UH79kNMoGzVg6lS4G++j2rE39Q==
+
 react@^16.13.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react/-/react-16.13.1.tgz#2e818822f1a9743122c063d6410d85c1e3afe48e"

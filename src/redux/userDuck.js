@@ -2,7 +2,7 @@
 const initState={
     isLogged : false
 }
-let LOGIN = "LOGIN"
+//let LOGIN = "LOGIN"
 //Reducer
 export default function reducer(state=initState, action ={}){
     switch (action.type) {
