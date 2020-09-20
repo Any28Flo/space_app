@@ -17,7 +17,7 @@ export default function reducer(state=initState, actions){
         case GET_LAUCH:
             return {...state,fetching : true}
         case  GET_LAUCH_SUCESS:
-            return {...state , launches: actions.payload, fetching: false }
+            return {...state , data: actions.payload, fetching: false }
         case GET_LAUCH_ERROR:
             return {...state , fetching: false, error: actions.payload}
         default: return state;

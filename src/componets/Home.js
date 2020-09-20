@@ -1,33 +1,23 @@
 import React , {Fragment}from 'react'
 import {useSelector} from "react-redux";
+import './../sources/styles/main.css'
 
-
-function Home ({rockets}){
-    const counter = useSelector(state => state.launches.launches)
-    console.log(counter[0])
+function Home (){
+    const {data} = useSelector(state => state.launches)
+    console.log(data)
     function renderRocket (){
       //  let rocket =  rockets[0];
 
         return(
-            <div className="max-w-sm rounded overflow-hidden shadow-lg">
-                <img className="w-full" src="/img/card-top.jpg" alt="Sunset in the mountains"/>
-                    <div className="px-6 py-4">
-                        <div className="font-bold text-xl mb-2">The Coldest Sunset</div>
-                        <p className="text-gray-700 text-base">
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores
-                            et perferendis eaque, exercitationem praesentium nihil.
-                        </p>
-                    </div>
-                    <div className="px-6 pt-4 pb-2">
-                        <span
-                            className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#photography</span>
-                        <span
-                            className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#travel</span>
-                        <span
-                            className="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#winter</span>
-                    </div>
+            <div className="bg-white rounded-lg p-6">
+                <img className="h-16 w-16 rounded-full mx-auto" src="avatar.jpg"/>
+                <div>
+                  <h2 className="text-lg">Erin Lindford</h2>
+              <div className="text-purple-500">Product Engineer</div>
+              <div className="text-gray-600">erinlindford@example.com</div>
+             <div className="text-gray-600">(555) 765-4321</div>
             </div>
-
+          </div>
     )
     }
 
