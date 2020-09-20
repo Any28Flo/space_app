@@ -15,11 +15,11 @@ let GET_LAUCH_ERROR = "GET_LAUCH_ERROR"
 export default function reducer(state=initState, actions){
     switch (actions.type) {
         case GET_LAUCH:
-            return {...state,fetching : true}
+            return {...state,loading: true}
         case  GET_LAUCH_SUCESS:
-            return {...state , data: actions.payload, fetching: false }
+            return {...state , data: actions.payload, loading: false }
         case GET_LAUCH_ERROR:
-            return {...state , fetching: false, error: actions.payload}
+            return {...state , loading: false, error: actions.payload}
         default: return state;
 
     }
