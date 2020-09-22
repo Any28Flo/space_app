@@ -3,7 +3,6 @@ import moment from "moment";
 const Launche = ({data}) =>{
     console.log(data)
     const {flight_number , links, launch_site , name, data_unix, details} = data;
-    console.log(data)
     let date = moment(data_unix).format('DD-MM-YYYY hh:mm:ss A');
 
     return(
