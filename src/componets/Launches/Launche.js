@@ -1,38 +1,25 @@
 import React from 'react';
 import moment from "moment";
+import '../../sources/styles/main.css'
+
 const Launche = ({data}) =>{
-    console.log(data)
     const {flight_number , links, launch_site , name, data_unix, details} = data;
     let date = moment(data_unix).format('DD-MM-YYYY hh:mm:ss A');
-
     return(
-        <div className="max-w-sm w-full lg:max-w-full lg:flex">
-            <div
-                className="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
-                style={{ backgroundImage: `url(${links.patch.small})`}} title="Woman holding a mug">
-            </div>
-            <div
-                className="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
-                <div className="mb-8">
-                    <p className="text-sm text-gray-600 flex items-center">
-                        <svg className="fill-current text-gray-500 w-3 h-3 mr-2" xmlns="http://www.w3.org/2000/svg"
-                             viewBox="0 0 20 20">
+        <div className="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
+                <img className="hover:grow hover:shadow-lg h-32 w-32"
+                     src={links.patch.small}
+                     alt={`launch-${name}`}
+                />
+                    <div className="pt-3 flex items-center justify-between">
+                        <p className="">{flight_number}-{name}</p>
+                        <svg className="h-6 w-6 fill-current text-gray-500 hover:text-black"
+                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                             <path
-                                d="M4 8V6a6 6 0 1 1 12 0v2h1a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2v-8c0-1.1.9-2 2-2h1zm5 6.73V17h2v-2.27a2 2 0 1 0-2 0zM7 6v2h6V6a3 3 0 0 0-6 0z"/>
+                                d="M12,4.595c-1.104-1.006-2.512-1.558-3.996-1.558c-1.578,0-3.072,0.623-4.213,1.758c-2.353,2.363-2.352,6.059,0.002,8.412 l7.332,7.332c0.17,0.299,0.498,0.492,0.875,0.492c0.322,0,0.609-0.163,0.792-0.409l7.415-7.415 c2.354-2.354,2.354-6.049-0.002-8.416c-1.137-1.131-2.631-1.754-4.209-1.754C14.513,3.037,13.104,3.589,12,4.595z M18.791,6.205 c1.563,1.571,1.564,4.025,0.002,5.588L12,18.586l-6.793-6.793C3.645,10.23,3.646,7.776,5.205,6.209 c0.76-0.756,1.754-1.172,2.799-1.172s2.035,0.416,2.789,1.17l0.5,0.5c0.391,0.391,1.023,0.391,1.414,0l0.5-0.5 C14.719,4.698,17.281,4.702,18.791,6.205z"/>
                         </svg>
-                        Members only
-                    </p>
-                    <div className="text-gray-900 font-bold text-xl mb-2">{flight_number}-{name}</div>
-                    <p className="text-gray-700 text-base">{details}</p>
-                </div>
-                <div className="flex items-center">
-
-                    <div className="text-sm">
-                        <p className="text-gray-900 leading-none">{launch_site}</p>
-                        <p className="text-gray-600">{date}</p>
                     </div>
-                </div>
-            </div>
+                    <p className="pt-1 text-gray-900">{date}</p>
         </div>
     )
 }

@@ -44,7 +44,7 @@ export let getCharactersAction = () => async (dispatch) =>{
     try{
        const {data} =await  axios.get(  `${URL}/launches`)
         const array = data.filter( element => element.upcoming === true)
-        dispatch(getLaunchSucess(array))
+        dispatch(getLaunchSucess(data))
     }catch (e) {
         dispatch(getLaunchError(e))
     }

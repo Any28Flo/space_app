@@ -7,7 +7,8 @@ function Home (){
     const {data,loading} = useSelector(state => state.launches)
 
     return (
-        <div>
+        <div className="bg-white text-gray-600 work-sans leading-normal text-base tracking-normal">
+
             <h1>Home</h1>
             {
                 loading ? <Spinner/> : <Launches launches={data}/>
