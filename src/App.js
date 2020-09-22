@@ -4,7 +4,7 @@ import Home from "./componets/page/Home"
 function App() {
   return (
       <Switch>
-          <Route path ="/home"> <Home/></Route>
+          <Route path ="/"> <Home/></Route>
       </Switch>
   );
 }

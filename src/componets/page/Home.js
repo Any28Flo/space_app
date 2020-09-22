@@ -12,11 +12,7 @@ function Home (){
             {
                 loading ? <Spinner/> : <Launches launches={data}/>
             }
-       {/*     <Fragment>
 
-
-                {renderRocket()}
-            </Fragment>*/}
         </div>
 
     )

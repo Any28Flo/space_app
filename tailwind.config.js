@@ -1,7 +1,11 @@
 module.exports = {
+  fontFamily: {
+    display: ['Gilroy', 'sans-serif'],
+    body: ['Graphik', 'sans-serif'],
+  },
   future: {
-    // removeDeprecatedGapUtilities: true,
-    // purgeLayersByDefault: true,
+    removeDeprecatedGapUtilities: true,
+    purgeLayersByDefault: true,
   },
   purge: [],
   target: 'relaxed',
