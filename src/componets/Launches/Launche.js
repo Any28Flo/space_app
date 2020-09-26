@@ -1,9 +1,11 @@
 import React from 'react';
 import moment from "moment";
 import '../../sources/styles/main.css'
+import {Link} from 'react-router-dom';
 
 const Launche = ({data}) =>{
-    const {flight_number , links, launch_site , name, data_unix, details} = data;
+    const {flight_number , links, launch_site , name, data_unix, details,id} = data;
+    console.log(data)
     let date = moment(data_unix).format('DD-MM-YYYY hh:mm:ss A');
     return(
         <div className="w-full md:w-1/3 xl:w-1/4 p-6 flex flex-col">
@@ -20,6 +22,10 @@ const Launche = ({data}) =>{
                         </svg>
                     </div>
                     <p className="pt-1 text-gray-900">{date}</p>
+            <Link  to={`/launche/${id}`} >
+                <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">Ver más</button>
+
+            </Link>
         </div>
     )
 }
