@@ -3,7 +3,6 @@ import Launche from './Launche'
 import '../../sources/styles/main.css'
 
 const Launches = ({launches}) =>{
-    console.log(launches)
     return(
         <div className="container mx-auto flex items-center flex-wrap pt-4 pb-12">
             {
