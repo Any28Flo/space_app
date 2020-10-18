@@ -11,7 +11,7 @@ const URL = 'https://api.spacexdata.com/v4'
 let GET_LAUCH = "GET_LAUCH";
 let GET_LAUCH_SUCESS = "GET_LAUNCH_SUCESS"
 let GET_LAUCH_ERROR = "GET_LAUCH_ERROR"
-
+let GET_DETAIL_SUCCESS = "GET_DETAIL_SUCCESS"
 //Reducer
 export default function launchesReducer(state=initState, actions){
     switch (actions.type) {
@@ -37,6 +37,10 @@ export const getLaunchError = payload =>({
     type: GET_LAUCH_ERROR,
     payload
 })
+export const getDetailLauncSucess = payload=>({
+    type : GET_DETAIL_SUCCESS,
+    payload
+})
 //Actions
 
 export let getCharactersAction = () => async (dispatch) =>{
@@ -49,4 +53,24 @@ export let getCharactersAction = () => async (dispatch) =>{
         dispatch(getLaunchError(e))
     }
 
+}
+export let getLauncheDetail = (id) => async (dispatch) =>{
+    console.log("holla");
+    dispatch(getLaunchesStart())
+    try{
+        const {data} = await axios.get(`${URL}/launches/${id}`)
+        console.log(data)
+    }catch(e){
+        console.log(e)
+    }
+}
+export let getRocket = (id) => async (dispatch) =>{
+    console.log("rocket");
+    dispatch(getLaunchesStart())
+    try{
+        const {data} = await axios.get(`${URL}/rockets/${id}`)
+        console.log(data)
+    }catch(e){
+        console.log(e)
+    }
 }
